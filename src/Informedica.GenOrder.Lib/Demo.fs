@@ -68,7 +68,8 @@ module Demo =
                 Shape = shp
                 Scenarios = 
                     match gen, rte, shp with
-                    | Some _, Some _, Some _ ->
+                    | Some _, Some _, _ 
+                    | Some _, _, Some _ ->
                         { filter with
                             Department = Some d
                             Indication = ind
@@ -89,14 +90,15 @@ module Demo =
                                         ord
                                         |> Order.Print.printPrescription ns
                                     [
-                                        $"{pr.DoseRule.Generic}, {pr.DoseRule.Shape}, {pr.DoseRule.DoseType |> DoseType.toString} {pr.DoseRule.Indication}"
-                                        $"Voorschrift: {prs}"
-                                        $"Bereiding: {prp}"
-                                        $"Toediening: {adm}"
+                                        $"- #### {pr.DoseRule.Generic}, {pr.DoseRule.Shape}, {pr.DoseRule.DoseType |> DoseType.toString} {pr.DoseRule.Indication}"
+                                        $"- Voorschrift: {prs}"
+                                        $"- Bereiding: {prp}"
+                                        $"- Toediening: {adm}"
                                     ]
                                     |> String.concat "\n"
 
-                                | Error _ -> ""
+                                | Error (_, _, errs) -> 
+                                    errs |> List.map string |> String.concat "\n"
                             )
                         )
 

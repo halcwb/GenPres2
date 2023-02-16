@@ -153,7 +153,12 @@ module Prescribe =
                 scs
                 |> List.map (fun sc ->
                     Mui.listItem [
-                        sc |> Components.Markdown.render
+                        sc 
+                        |> String.replace "[" ""
+                        |> String.replace "]" ""
+                        |> String.replace "<" ""
+                        |> String.replace ">" ""
+                        |> Components.Markdown.render
                     ]
                 )
                 |> Mui.list

@@ -1,24 +1,6 @@
 # Use an opt-in strategy
 *
 
-# Add .gitignore and .gitattributes
-!.gitignore
-!.gitattributes
-!.dockerignore
-
-# Add license
-!LICENSE.txt
-!LICENSE
-
-# Add todo list
-!ToDo.txt
-
-# Add md files
-!*.md
-
-# Add fsx files
-!*.fsx
-
 # Add build files
 !build.sh
 !build.cmd
@@ -29,16 +11,6 @@
 # Add global json
 !global.json
 
-# Add editor config
-!.editorconfig
-
-# Add vscode config
-!/.vscode/
-!/.vscode/*.json
-
-# Add proc and Docker file
-!Procfile
-!Dockerfile
 
 # Add local tools config
 !/.config/
@@ -48,17 +20,6 @@
 !/.paket/
 !/.paket/Paket.Restore.targets
 
-# Add github folder
-!/.github
-!/.github/*
-!/.github/ISSUE_TEMPLATE/
-!/.github/ISSUE_TEMPLATE/*
-!/.github/workflows/
-!/.github/workflows/*
-
-# Add devcontainer
-!/.devcontainer/
-!/.devcontainer/*
 
 # Add dependencies file
 !paket.dependencies
@@ -122,16 +83,6 @@
 !/src/Server/data
 !/src/Server/data/cache
 !/src/Server/data/*.cache
-
-# Add data folders
-!/data/
-!/data/cache/
-!/data/zindex/
-!/data/formulary/
-!/data/formulary/*.csv
-!/data/mapping/
-!/data/output/
-!/data/output/*.csv
 
 
 # Informedica.Utils.Lib
