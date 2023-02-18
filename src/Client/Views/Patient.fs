@@ -62,7 +62,7 @@ module Patient =
         | HeightChange n -> { state with Height = Some n }
         |> fun state ->
             state,
-            Cmd.ofSub (fun _ ->
+            Cmd.ofEffect (fun _ ->
                 Patient.create
                     state.Year
                     state.Month

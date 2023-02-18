@@ -207,7 +207,7 @@ module EmergencyList =
     let update handleRowClick msg state =
         match msg with
         | RowClick (i, els) ->
-            state, Cmd.ofSub (fun _ -> (i, els) |> handleRowClick)
+            state, Cmd.ofEffect (fun _ -> (i, els) |> handleRowClick)
         | SetSort sort ->
             match sort with
             | IndicationAsc -> {state with BolusMed = state.BolusMed |> List.sortBy (fun item -> item.Indication )}, Cmd.none

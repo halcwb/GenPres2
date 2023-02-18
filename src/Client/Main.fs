@@ -76,9 +76,9 @@ let update lang updateLang updatePatient (msg: Msg) (state: State) =
                 )
         },
         Cmd.none
-    | UpdatePatient p -> state, Cmd.ofSub (fun _ -> p |> updatePatient)
+    | UpdatePatient p -> state, Cmd.ofEffect (fun _ -> p |> updatePatient)
     | LanguageChange s ->
-        state, Cmd.ofSub (fun _ -> s |> Localization.fromString |> updateLang)
+        state, Cmd.ofEffect (fun _ -> s |> Localization.fromString |> updateLang)
 
 
 [<ReactComponent>]

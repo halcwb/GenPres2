@@ -103,7 +103,7 @@ module SortableTable =
 
     let update rowClick msg state =
         match msg with
-        | RowClick (i, xs) -> state, Cmd.ofSub (fun _ -> (i, xs) |> rowClick)
+        | RowClick (i, xs) -> state, Cmd.ofEffect (fun _ -> (i, xs) |> rowClick)
         | Sort i -> state |> sortState i, Cmd.none
 
 

@@ -23,10 +23,10 @@ module SideMenu =
         match msg with
         | ToggleMenu ->
             (),
-            Cmd.ofSub (fun _ -> onClose ())
+            Cmd.ofEffect (fun _ -> onClose ())
         | MenuClick x ->
             (),
-            Cmd.ofSub (fun _ -> x |> menuClick)
+            Cmd.ofEffect (fun _ -> x |> menuClick)
 
 
     let useStyles =

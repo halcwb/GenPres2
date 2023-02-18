@@ -24,7 +24,7 @@ module Select =
         match msg with
         | Select s ->
             { state with Selected = s |> Some },
-            Cmd.ofSub (fun _ -> s |> handleSelect)
+            Cmd.ofEffect (fun _ -> s |> handleSelect)
 
 
     let useStyles =

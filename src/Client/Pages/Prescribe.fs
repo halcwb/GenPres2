@@ -64,7 +64,7 @@ module Prescribe =
             let cmd =
                 match scenarios with
                 | Resolved sc ->
-                    Cmd.ofSub (fun _ ->
+                    Cmd.ofEffect (fun _ ->
                         { sc with Indication = Some s } |> updateScenarios
                     )
                 | _ -> Cmd.none
@@ -74,7 +74,7 @@ module Prescribe =
             let cmd =
                 match scenarios with
                 | Resolved sc ->
-                    Cmd.ofSub (fun _ ->
+                    Cmd.ofEffect (fun _ ->
                         { sc with Medication = Some s } |> updateScenarios
                     )
                 | _ -> Cmd.none
@@ -84,7 +84,7 @@ module Prescribe =
             let cmd =
                 match scenarios with
                 | Resolved sc ->
-                    Cmd.ofSub (fun _ ->
+                    Cmd.ofEffect (fun _ ->
                         { sc with Route = Some s } |> updateScenarios
                     )
                 | _ -> Cmd.none
